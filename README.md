@@ -5,6 +5,7 @@
 	- C Group project
 	- Algorithm
 	- Data structure
+
 **INSTRUCTIONS**
 	
     Usage: monty file
