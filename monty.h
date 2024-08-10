@@ -39,6 +39,7 @@ typedef struct bus_s
 	int flag;
 }  bus_t;
 extern bus_t bus;
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -73,8 +74,8 @@ void pchar_stack(stack_t **stack, unsigned int line_number);
 void print_string(stack_t **stack, unsigned int line_number);
 void rotate_left(stack_t **stack, __attribute__((unused)) unsigned int line_number);
 void rotr(stack_t **stack, __attribute__((unused)) unsigned int line_number);
-void addnode(stack_t **head, int n);
-void addqueue(stack_t **head, int n);
-void f_queue(stack_t **head, unsigned int counter);
+void add_node(stack_t **head, int value);
+void addqueue(stack_t **stack_head, int new_value);
+void f_queue(stack_t **stack_head, unsigned int line_number);
 void f_stack(stack_t **head, unsigned int counter);
 #endif
