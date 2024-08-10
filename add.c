@@ -11,14 +11,14 @@ void add_top_two_elements(stack_t **stack, unsigned int line_number)
 	stack_t *current = *stack;
 	int stack_length = 0, sum;
 
-	// Calculate the length of the stack
+	/* Calculate the length of the stack */
 	while (current)
 	{
 		current = current->next;
 		stack_length++;
 	}
 
-	// Check if the stack has at least 2 elements
+	/* Check if the stack has at least 2 elements */
 	if (stack_length < 2)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
@@ -28,14 +28,14 @@ void add_top_two_elements(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	// Calculate the sum of the top two elements
+	/* Calculate the sum of the top two elements */
 	current = *stack;
 	sum = current->n + current->next->n;
 
-	// Update the second element with the sum
+	/* Update the second element with the sum */
 	current->next->n = sum;
 
-	// Remove the first element from the stack
+	/* Remove the first element from the stack */
 	*stack = current->next;
 	free(current);
 }

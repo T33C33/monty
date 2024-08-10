@@ -53,6 +53,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
+ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream);
 ssize_t getstdin(char **lineptr, int file);
 char  *clean_line(char *content);
 void push_node(stack_t **stack, unsigned int line_number);

@@ -37,7 +37,7 @@ void push_node(stack_t **stack, unsigned int line_number)
 	}
 	num = atoi(bus.arg);
 	if (bus.flag == 0)
-		add_node(stack, num);
+		addnode(stack, num);
 	else
-		add_queue(stack, num);
+		addqueue(stack, num);
 }
