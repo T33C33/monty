@@ -10,7 +10,15 @@
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t opst[] = {
-		{"push", push_node}, {"pall", print_stack}, {"pint", print_top}, {"pop", pop_stack}, {"swap", swap_elements}, {"add", add_top_two_elements}, {"nop", my_custom_function}, {"sub", subtract_stack_top}, {"div", divide_top_two_elements}, {"mul", multiply_top_two}, {"mod", mod_stack}, {"pchar", pchar_stack}, {"pstr", print_string}, {"rotl", rotate_left}, {"rotr", rotr}, {"queue", f_queue}, {"stack", f_stack}, {NULL, NULL}};
+		{"push", push_node},
+		{"pall", print_stack},
+		{"pint", print_top}, {"pop", pop_stack},
+		{"swap", swap_elements}, {"add", add_top_two_elements},
+		{"nop", my_custom_function}, {"sub", subtract_stack_top},
+		{"div", divide_top_two_elements}, {"mul", multiply_top_two},
+		{"mod", mod_stack}, {"pchar", pchar_stack},
+		{"pstr", print_string}, {"rotl", rotate_left}, {"rotr", rotr},
+		{"queue", f_queue}, {"stack", f_stack}, {NULL, NULL}};
 	unsigned int i = 0;
 	char *op;
 

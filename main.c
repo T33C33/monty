@@ -1,12 +1,5 @@
 #include "monty.h"
 
-typedef struct {
-	FILE *file;
-	char *content;
-	stack_t *stack;
-	unsigned int counter;
-} MontyInterpreter;
-
 MontyInterpreter interpreter = {NULL, NULL, NULL, 0};
 bus_t bus = {NULL, NULL, NULL, 0, 0};
 
