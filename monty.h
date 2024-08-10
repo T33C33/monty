@@ -1,11 +1,12 @@
 #ifndef MONTY_H
 #define MONTY_H
-
 #include <stdio.h>
+#include <unistd.h>
+#include <string.h>
 #include <stdlib.h>
+#include <fcntl.h>
+#include <sys/types.h>
 #include <ctype.h>
-
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -35,6 +36,7 @@ typedef struct bus_s
 	FILE *file;
 	char *content;
 	int lifi;
+	int flag;
 }  bus_t;
 extern bus_t bus;
 /**
@@ -50,8 +52,28 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
-void push(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack, unsigned int line_number);
-
+char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
+ssize_t getstdin(char **lineptr, int file);
+char  *clean_line(char *content);
+void push_node(stack_t **stack, unsigned int line_number);
+void print_stack(stack_t **stack, unsigned int counter);
+void print_top(stack_t **stack, unsigned int line_number);
+int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
+void free_stack(stack_t *head);
+void pop_stack(stack_t **stack, unsigned int line_number);
+void swap_elements(stack_t **stack, unsigned int line_number);
+void add_top_two_elements(stack_t **stack, unsigned int line_number);
+void my_custom_function(stack_t **stack, unsigned int line_number);
+void subtract_stack_top(stack_t **stack, unsigned int line_number);
+void divide_top_two_elements(stack_t **stack, unsigned int line_number);
+void multiply_top_two(stack_t **stack, unsigned int line_number);
+void mod_stack(stack_t **stack, unsigned int line_number);
+void pchar_stack(stack_t **stack, unsigned int line_number);
+void print_string(stack_t **stack, unsigned int line_number);
+void rotate_left(stack_t **stack, __attribute__((unused)) unsigned int line_number);
+void rotr(stack_t **stack, __attribute__((unused)) unsigned int line_number);
+void addnode(stack_t **head, int n);
+void addqueue(stack_t **head, int n);
+void f_queue(stack_t **head, unsigned int counter);
+void f_stack(stack_t **head, unsigned int counter);
 #endif
