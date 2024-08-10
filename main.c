@@ -3,6 +3,12 @@
 MontyInterpreter interpreter = {NULL, NULL, NULL, 0};
 bus_t bus = {NULL, NULL, NULL, 0, 0};
 
+/**
+ * main - reads an entire line from stream
+ * @argc: value of arguments
+ * @argv: vector of arguments
+ * Return: the number of characters read, or -1 on failure
+ */
 int main(int argc, char *argv[])
 {
 	char *line;
